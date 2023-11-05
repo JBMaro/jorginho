@@ -7,7 +7,7 @@ public class User {
     private String lastname;
     private String dataNascimento;
     private String cpf;
-    private Integer userId;
+    private Integer userId = null;
     public User() {}
     public User(String login, String password, String name, String lastname, String dataNascimento, String cpf, Integer userId) {
         this.login = login;
@@ -16,7 +16,7 @@ public class User {
         this.lastname = lastname;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
-        this.userId =userId;
+        this.userId = userId;
     }
 
     public Integer getUserId() {

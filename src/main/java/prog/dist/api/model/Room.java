@@ -5,17 +5,35 @@ import java.util.List;
 public class Room {
     private Integer roomNumber;
     private Boolean roomStatus;
-    public Integer clientId;
+    private Integer clientId;
     private Double roomPrice;
     private String bedType;
+    private Integer checkInId;
 
     public Room() {}
-    public Room(Integer roomNumber, Boolean roomStatus, Integer clientId, Double roomPrice, String bedType) {
+    public Room(Integer roomNumber, Boolean roomStatus, Integer clientId, Double roomPrice, String bedType, Integer checkInId) {
         this.roomNumber = roomNumber;
         this.roomStatus = roomStatus;
         this.clientId = clientId;
         this.roomPrice = roomPrice;
         this.bedType = bedType;
+        this.checkInId = checkInId;
+    }
+
+    public Integer getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
+    }
+
+    public Integer getCheckInId() {
+        return checkInId;
+    }
+
+    public void setCheckInId(Integer checkInId) {
+        this.checkInId = checkInId;
     }
 
     public String getBedType() {

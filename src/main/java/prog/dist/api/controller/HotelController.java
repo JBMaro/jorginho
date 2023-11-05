@@ -2,30 +2,31 @@ package prog.dist.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import prog.dist.api.repository.UserRepository;
-import prog.dist.api.model.User;
+import prog.dist.api.model.Hotel;
+import prog.dist.api.repository.HotelRepository;
+
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/hoteis")
+public class HotelController {
 
     @Autowired
-    private UserRepository repository;
+    private HotelRepository repository;
 
     @PostMapping()
-    public void postUser(@RequestBody User user){
-        user.setUserId(repository.usersLen());
-        repository.save(user);
+    public void postUser(@RequestBody Hotel hotel){
+        hotel.setHotelId(repository.hoteisLen());
+        repository.save(hotel);
     }
 
     @PutMapping()
-    public void put(@RequestBody User user){
-        repository.update(user);
+    public void put(@RequestBody Hotel hotel){
+        repository.update(hotel);
     }
 
     @GetMapping()
-    public List<User> getAll(){
+    public List<Hotel> getAll(){
         return repository.listAll();
     }
 
